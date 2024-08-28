@@ -3,7 +3,7 @@ Jekyll::Hooks.register :site, :post_write do |site|
     tags.each do |tag|
       tag_dir = File.join(site.source, 'tags', tag)
       Dir.mkdir(tag_dir) unless File.exists?(tag_dir)
-      tag_page = File.join(tag_dir, 'index.md')
+      tag_page = File.join(tag_dir, 'index.html')
       
       File.open(tag_page, 'w') do |f|
         f.write("---\n")
