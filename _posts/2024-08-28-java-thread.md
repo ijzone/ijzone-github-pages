@@ -64,3 +64,57 @@ public class Main {
     }
 }
 ```
+#### 결과
+```
+// join() 메서드를 호출 해서 쓰레드의 수행 완료를 기다렸을 때
+main START
+👇 구현
+Thread (1) running
+Thread (2) running
+Thread (3) running
+Thread (4) running
+Thread (5) running
+Thread (6) running
+Thread (7) running
+Thread (8) running
+Thread (9) running
+Thread (10) running
+👇 상속
+Thread (1) running
+Thread (2) running
+Thread (3) running
+Thread (4) running
+Thread (5) running
+Thread (6) running
+Thread (7) running
+Thread (8) running
+Thread (9) running
+Thread (10) running
+main END
+
+// join() 메서드를 호출하지 않았을 때
+main START
+👇 구현
+Thread (1) running
+Thread (5) running
+Thread (9) running
+Thread (4) running
+Thread (7) running
+Thread (6) running
+Thread (10) running
+Thread (8) running
+Thread (2) running
+👇 상속
+Thread (3) running
+Thread (1) running
+Thread (2) running
+Thread (3) running
+Thread (4) running
+Thread (5) running
+Thread (6) running
+Thread (7) running
+Thread (8) running
+Thread (9) running
+Thread (10) running
+main END
+```
